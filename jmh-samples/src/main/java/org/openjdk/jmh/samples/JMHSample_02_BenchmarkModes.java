@@ -133,7 +133,7 @@ public class JMHSample_02_BenchmarkModes {
      * We can also ask for multiple benchmark modes at once. All the tests
      * above can be replaced with just a single test like this:
      */
-    @Benchmark
+    // @Benchmark
     @BenchmarkMode({Mode.Throughput, Mode.AverageTime, Mode.SampleTime, Mode.SingleShotTime})
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void measureMultiple() throws InterruptedException {
@@ -144,7 +144,7 @@ public class JMHSample_02_BenchmarkModes {
      * Or even...
      */
 
-    @Benchmark
+    // @Benchmark
     @BenchmarkMode(Mode.All)
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     public void measureAll() throws InterruptedException {

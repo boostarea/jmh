@@ -78,10 +78,12 @@ public class JMHSample_15_Asymmetric {
      */
 
     private AtomicInteger counter;
+    private AtomicInteger counter1;
 
     @Setup
     public void up() {
         counter = new AtomicInteger();
+        counter1 = new AtomicInteger();
     }
 
     @Benchmark
@@ -93,9 +95,29 @@ public class JMHSample_15_Asymmetric {
 
     @Benchmark
     @Group("g")
-    @GroupThreads(1)
+    @GroupThreads(2)
     public int get() {
         return counter.get();
+    }
+    @Benchmark
+    @Group("g")
+    @GroupThreads(2)
+    public int aa() {
+        return counter.get();
+    }
+
+    @Benchmark
+    @Group("j")
+    @GroupThreads(2)
+    public int jGet() {
+        return counter1.incrementAndGet();
+    }
+
+    @Benchmark
+    @Group("h")
+    @GroupThreads(2)
+    public int hGet() {
+        return counter1.get();
     }
 
     /*

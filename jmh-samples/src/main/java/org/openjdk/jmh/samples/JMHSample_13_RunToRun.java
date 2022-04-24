@@ -45,6 +45,12 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import java.util.concurrent.TimeUnit;
 
+// 使用fork进行精确结果
+// Benchmark                       Mode  Cnt    Score     Error  Units
+// JMHSample_13_RunToRun.baseline  avgt    3  563.901 ±   6.739  ms/op
+// JMHSample_13_RunToRun.fork_1    avgt   15  528.927 ± 249.844  ms/op
+// JMHSample_13_RunToRun.fork_2    avgt   60  513.143 ± 152.388  ms/op
+
 @State(Scope.Thread)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
